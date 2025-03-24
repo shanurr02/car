@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Website Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Cars.</a>
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Book your Vehicle from DoorStep.</h1>
+            <h3>Ontime! Cost Effective!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn" id="bookBtn">Book Vehicle</a>
+        </div>
+
+        <div class="home-img">
+            <div class="rhombus">
+                <img src="car.png" alt="">
+            </div>
+
+            
+        </div>
+        <div class="rhombus2"></div>
+
+    </section>
+
+    <!-- Placeholder for Modal -->
+    <div id="modalContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var modalContainer = document.getElementById("modalContainer");
+            var btn = document.getElementById("bookBtn");
+
+            // Load modal.html dynamically
+            fetch("modal.html")
+                .then(response => response.text())
+                .then(data => {
+                    modalContainer.innerHTML = data;
+
+                    // Get modal element after it's added to DOM
+                    var modal = document.getElementById("bookingModal");
+                    var closeBtn = modal.querySelector(".close");
+
+                    // **Ensure the modal is hidden initially**
+                    modal.style.display = "none";
+
+                    // Show modal on button click
+                    btn.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        modal.style.display = "flex";
+                    });
+
+                    // Close modal when clicking '×'
+                    closeBtn.addEventListener("click", function () {
+                        modal.style.display = "none";
+                    });
+
+                    // Close modal when clicking outside the modal content
+                    window.addEventListener("click", function (event) {
+                        if (event.target === modal) {
+                            modal.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error("Error loading modal:", error));
+        });
+    </script>
+</body>
+
+</html>
