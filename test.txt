@@ -89,23 +89,16 @@
 
 <body>
   <header class="header">
-    <a href="#" class="logo">GetKaar</a>
+    <a href="#" class="logo">Cars.</a>
     <nav class="navbar">
       <a href="#" class="active">Home</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
     <div class="social-media">
-        <a href="https://www.instagram.com/getkaar?utm_source=qr&igsh=MWZqdWh5cDQ1cHpoNA==" target="_blank">
-            <i class='bx bxl-instagram'></i>
-          </a>
-          <a href="https://www.facebook.com/GetKaar/" target="_blank">
-            <i class='bx bxl-facebook'></i>
-          </a>
-          <a href="#" target="_blank">
-            <i class='bx bxl-instagram-alt'></i>
-          </a>
-          
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-instagram-alt'></i></a>
     </div>
   </header>
 
@@ -113,7 +106,7 @@
     <div class="home-content">
       <h1>Book your Vehicle from DoorStep.</h1>
       <h3>Ontime! Cost Effective!</h3>
-      <h4>Drop Your Details – We’ll Be in Touch Shortly!      </h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <a href="#" class="btn" id="bookBtn">Book Vehicle</a>
     </div>
 
@@ -147,12 +140,9 @@
 
         <label for="vehicle">Select Vehicle:</label>
         <select id="vehicle" name="vehicle" required>
-          <option value="sedan">Anyone</option>
-          <option value="sedan">Mini</option>
+          <option value="sedan">Sedan</option>
           <option value="suv">SUV</option>
-          <option value="truck">Sedan</option>
-          <option value="truck">Van</option>
-
+          <option value="truck">Truck</option>
         </select>
 
         <label for="pickupDate">Pickup Date:</label>
